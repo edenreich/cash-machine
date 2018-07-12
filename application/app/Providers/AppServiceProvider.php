@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Classes\CashMachine;
+use App\Interfaces\CashMachineInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,6 +15,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(CashMachineInterface::class, CashMachine::class);
     }
 }
