@@ -3,7 +3,8 @@
 ## Installation
 on the commandline run:
 ```sh
-docker-compose up -d
+docker-compose up -d \
+docker exec -it app composer install
 ```
 this will setup the correct envoirnment for you. so you can just open ```localhost``` in the browser.
 if you don't want to use docker - just install php 7.0+ and nginx, do make sure nginx points to ```application/public``` folder.
