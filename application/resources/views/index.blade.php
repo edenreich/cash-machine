@@ -71,7 +71,7 @@
           if (response.notes.length === 0) {
             formGroup.find('.help-block').html('You did not withdraw any notes!');            
           } else {
-            formGroup.find('.help-block').html('You withdrawed '+response.notes.join(', ')+' notes successfuly!');
+            formGroup.find('.help-block').html('You withdrawed '+response.notes.join(', ')+' notes successfully!');
           }
         }).catch(function() {
           formGroup.addClass('has-error');
