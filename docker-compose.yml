@@ -3,31 +3,8 @@ services:
   app:
     image: edenr/php-app
     container_name: app
-    networks:
-     - appnet
     volumes:
      - ./application:/var/www/html
     ports:
      - 80:80
     working_dir: /var/www/html
-  db:
-    image: mysql:5.7
-    container_name: mysql
-    hostname: db
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: homestead
-      MYSQL_USER: homestead
-      MYSQL_PASSWORD: secret
-    ports:
-     - 3306:3306
-    networks:
-     - appnet
-    volumes:
-     - dbdata:/var/lib/mysql
-networks:
-  appnet:
-    driver: bridge
-volumes:
-  dbdata:
-    driver: local
